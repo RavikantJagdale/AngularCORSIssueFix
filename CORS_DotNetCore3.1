@@ -1,0 +1,19 @@
+//Below code need to add in dotnet core API -> Startup.cs file
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseCors(builder => builder
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .SetIsOriginAllowed(origin => true));
+            
+            ...
+        }
+        
+        
+         public void ConfigureServices(IServiceCollection services)
+        {
+            ...
+
+            services.AddCors();
+        }
